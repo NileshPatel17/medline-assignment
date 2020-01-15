@@ -1,0 +1,24 @@
+.register-user-container{
+    display: flex;
+    flex-direction: column;
+}
+.form-input{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;;
+}
+.form-input > input{
+    padding-left: 10px;
+    height: 30px;
+    font-size: 12px;
+}
+.form-input > label {
+    padding: 2px 0;
+}
+.form-input-error{
+    font-size: 11px;
+    color:red;
+}
+input.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
