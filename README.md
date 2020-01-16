@@ -22,4 +22,7 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `npm run cy:open` to execute the end-to-end tests.
 
-![test](E2E_test_result.png)
+![e2e test result](screenshots/e2e-test-result.png)
+![e2e test result](screenshots/register-user.png)
+![e2e test result](screenshots/user-confirmation.png)
+![e2e test result](screenshots/user-feedback.png)
