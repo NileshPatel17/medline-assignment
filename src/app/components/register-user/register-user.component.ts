@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router'
 import { FormGroup, FormControl, Validators } from '@angular/forms'
 @Component({
   selector: 'app-register-user',
   templateUrl: './register-user.component.html',
-  styleUrls: ['./register-user.component.css']
+  styleUrls: ['./register-user.component.scss']
 })
 export class RegisterUserComponent implements OnInit {
   userForm: FormGroup;
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
     this.userForm = new FormGroup({
@@ -26,6 +27,9 @@ export class RegisterUserComponent implements OnInit {
     if (this.userForm.invalid) {
       return;
     }
+    this.router.navigate(['./register-feedback',{
+      userData:this.userForm.value
+    }])
     console.log(this.userForm.value)
   }
 }

@@ -1,0 +1,59 @@
+<div class="p-4">
+    <h2 class="text-3xl">Account Registration</h2>
+    <hr />
+    <h2 class="mt-4 mb-1">User Information</h2>
+    <hr />
+    <Form class="register-user-container max-w-lg" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div class="form-input">
+            <label for="firstName">First Name*</label>
+            <input type="text" placeholder="First Name" formControlName="firstName" />
+            <span class="form-input-error flex items-center flex items-center"
+                *ngIf="userForm.get('firstName').invalid && userForm.get('firstName').touched">
+                <img class="w-3 h-3 mr-1" src="../../../assets/images/error-message-red-24.png" />
+                First Name is required Field
+            </span>
+        </div>
+        <div class="form-input">
+            <label for="firstName">Last Name*</label>
+            <input type="text" placeholder="Last Name" formControlName="lastName" />
+            <span class="form-input-error flex items-center"
+                *ngIf="userForm.get('lastName').invalid && userForm.get('lastName').touched">
+                <img class="w-3 h-3 mr-1" src="../../../assets/images/error-message-red-24.png" />
+                Last Name is required
+                Field
+            </span>
+
+        </div>
+        <div class="form-input">
+            <label for="firstName">Phone*</label>
+            <input type="text" placeholder="Phone" formControlName="phone" />
+            <span class="form-input-error flex items-center"
+                *ngIf="userForm.get('phone').invalid && userForm.get('phone').touched">
+                <img class="w-3 h-3 mr-1" src="../../../assets/images/error-message-red-24.png" />
+                Phone is required Field</span>
+        </div>
+        <div class="form-input">
+            <label for="email">Email*</label>
+            <input type="email" placeholder="email" formControlName="email" />
+            <span class="form-input-error flex flex-col justify-center"
+                *ngIf="userForm.get('email').invalid && userForm.get('email').touched">
+                <span class="flex mt-1" *ngIf="userForm.get('email').errors['required']">
+                    <img class="w-3 h-3 mr-1" src="../../../assets/images/error-message-red-24.png" />
+                    Email is required Field
+                </span>
+                <span class="flex" *ngIf="userForm.get('email').errors['email']">
+                    <img class="w-3 h-3 mr-1" src="../../../assets/images/error-message-red-24.png" />
+                    Invaid Email
+                </span>
+            </span>
+        </div>
+        <div class="form-input">
+            <label for="ext">Ext*</label>
+            <input type="text" placeholder="ext" formControlName="ext" />
+        </div>
+        <!-- <pre>{{userForm.value | json }}</pre>
+        <pre>{{userForm.get('email').errors | json}}</pre> -->
+        <button type='submit' class="btn w-40">Submit</button>
+    </Form>
+
+</div>
