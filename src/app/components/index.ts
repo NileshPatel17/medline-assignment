@@ -1,9 +1,9 @@
 import { RegisterUserComponent } from './register-user';
-import { HeaderComponent } from './header';
-import {FooterComponent} from './footer'
+import { RegisterUserFeedbackComponent } from './register-user-feedback';
+import { PageNotFoundComponent } from './page-not-found';
 
 export const allComponents = [
     RegisterUserComponent,
-    HeaderComponent,
-    FooterComponent
+    RegisterUserFeedbackComponent,
+    PageNotFoundComponent
 ]

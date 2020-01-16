@@ -1,0 +1,1 @@
+export { RegisterUserFeedbackComponent } from './register-user-feedback.component';

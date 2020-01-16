@@ -1,0 +1,1 @@
+export { IUSER } from './user'

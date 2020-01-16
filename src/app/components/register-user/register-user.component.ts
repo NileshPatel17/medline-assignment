@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router'
 import { FormGroup, FormControl, Validators } from '@angular/forms'
+import { ModalService } from 'src/app/_modal';
+import { RegisterUserService } from 'src/app/services/register-user.service';
 @Component({
   selector: 'app-register-user',
   templateUrl: './register-user.component.html',
@@ -9,7 +11,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms'
 export class RegisterUserComponent implements OnInit {
   userForm: FormGroup;
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,private modalService:ModalService,private registerUserService:RegisterUserService) { }
 
   ngOnInit() {
     this.userForm = new FormGroup({
@@ -27,9 +29,14 @@ export class RegisterUserComponent implements OnInit {
     if (this.userForm.invalid) {
       return;
     }
-    this.router.navigate(['./register-feedback',{
-      userData:this.userForm.value
-    }])
-    console.log(this.userForm.value)
+    this.modalService.open("custom-modal-1")
   }
+ 
+  closeModal(id: string,confirm: boolean) {
+    this.modalService.close(id);
+    if(confirm){
+      this.registerUserService.set(this.userForm.value)
+      this.router.navigate(['./register-feedback'])
+    }
+}
 }

@@ -57,3 +57,29 @@
     </Form>
 
 </div>
+
+<jw-modal id="custom-modal-1" class="bg-blue-400">
+    <div class="text-2xl mb-2">User Information</div>
+    <hr />
+    <table class="table-auto">
+        <tbody>
+            <tr>
+                <td class="w-1/2 px-4 py-2">User Name</td>
+                <td class="w-1/2 px-4 py-2">{{userForm.value.firstName+' '+userForm.value.lastName}}</td>
+            </tr>
+            <tr>
+                <td class="w-1/2 px-4 py-2">Phone</td>
+                <td class="w-1/2 px-4 py-2">{{userForm.value.phone}}</td>
+            </tr>
+            <tr>
+                <td class="w-1/2 px-4 py-2">Email</td>
+                <td class="w-1/2 px-4 py-2">{{userForm.value.email}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr />
+    <div class="flex justify-center mt-10">
+        <button class="btn mr-4" (click)="closeModal('custom-modal-1',true);">Confirm</button>
+        <button class="btn" (click)="closeModal('custom-modal-1',false);">Cancel</button>
+    </div>
+</jw-modal>

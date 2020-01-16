@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { RegisterUserComponent } from './components/register-user';
-import { HeaderComponent } from './components/header';
-
+import { RegisterUserFeedbackComponent } from './components/register-user-feedback';
+import { PageNotFoundComponent } from './components/page-not-found';
 
 const routes: Routes = [
   {
@@ -11,11 +11,20 @@ const routes: Routes = [
   },
   {
     path: 'register-feedback',
-    component: HeaderComponent
+    component: RegisterUserFeedbackComponent
+  },
+  {
+    path:'404',
+    component:PageNotFoundComponent
+  },
+  {
+    path:'',
+    redirectTo:'register',
+    pathMatch:'full'
   },
   {
     path: '**',
-    redirectTo: 'register'
+    redirectTo: '404'
   }
 ];
 
